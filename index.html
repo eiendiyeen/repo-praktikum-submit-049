@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Tugas Praktikum | Cloud Computing</title>
+    <style>
+        :root {
+            --primary-pink: #ff85a2;
+            --soft-pink: #fce4ec;
+            --dark-pink: #f06292;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--soft-pink);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(240, 98, 146, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--dark-pink);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark-pink);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input[type="text"], select, input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--soft-pink);
+            border-radius: 10px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: var(--primary-pink);
+        }
+
+        button {
+            width: 100%;
+            background-color: var(--primary-pink);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: var(--dark-pink);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Praktikum Submit</h2>
+        <form action="/submit-task" method="POST" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label>NIM Mahasiswa</label>
+                <input type="text" name="nim" placeholder="Contoh: 0920240049" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" name="name" placeholder="Nama Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label>Kelas</label>
+                <input type="text" name="class_name" placeholder="Contoh: TRPL 2A" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mata Kuliah</label>
+                <select name="course">
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="Pemrograman Web">Mobile Programming</option>
+                    <option value="Microservices">Machine Learning</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Upload File Tugas</label>
+                <input type="file" name="file_tugas" required>
+            </div>
+
+            <button type="submit">Kirim Tugas</button>
+        </form>
+
+        <div class="footer">
+            Layanan Azure Cloud Submit
+        </div>
+    </div>
+
+</body>
+</html>
