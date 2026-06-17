@@ -26,7 +26,7 @@ app.post('/submit-task', upload.single('file_tugas'), async (req, res) => {
     const blobName = `${nim}_${req.file.originalname}`;
 
     // 1. Upload ke Azure Blob Storage
-    const containerClient = blobServiceClient.getContainerClient('tugas-praktikum');
+    const containerClient = blobServiceClient.getContainerClient('praktikum-049');
     const blockBlobClient = containerClient.getBlockBlobClient(blobName);
     await blockBlobClient.uploadData(req.file.buffer);
     const fileUrl = blockBlobClient.url;
