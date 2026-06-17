@@ -6,15 +6,16 @@
     <title>Submit Tugas Praktikum | Cloud Computing</title>
     <style>
         :root {
-            --primary-pink: #ff85a2;
-            --soft-pink: #fce4ec;
-            --dark-pink: #f06292;
+            --primary-purple: #8a2be2;      
+            --soft-purple: #f3e5f5;         
+            --dark-purple: #4a148c;         
+            --lavender-purple: #b388ff;     
             --white: #ffffff;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--soft-pink);
+            background-color: var(--soft-purple);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,27 +27,28 @@
             background-color: var(--white);
             padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(240, 98, 146, 0.2);
+            box-shadow: 0 10px 30px rgba(74, 20, 140, 0.15); /* Bayangan dengan tint ungu */
             width: 100%;
             max-width: 400px;
             text-align: center;
         }
 
         h2 {
-            color: var(--dark-pink);
+            color: var(--dark-purple);
             margin-bottom: 1.5rem;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .form-group {
             text-align: left;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
-            color: var(--dark-pink);
+            margin-bottom: 6px;
+            color: var(--dark-purple);
             font-size: 0.9rem;
             font-weight: 600;
         }
@@ -54,40 +56,69 @@
         input[type="text"], select, input[type="file"] {
             width: 100%;
             padding: 12px;
-            border: 2px solid var(--soft-pink);
+            border: 2px solid var(--lavender-purple);
             border-radius: 10px;
             box-sizing: border-box;
             outline: none;
-            transition: border-color 0.3s;
+            background-color: #faf8ff;
+            transition: all 0.3s ease;
         }
 
         input[type="text"]:focus, select:focus {
-            border-color: var(--primary-pink);
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 8px rgba(138, 43, 226, 0.2);
+            background-color: var(--white);
+        }
+
+        /* Styling khusus tombol upload agar serasi */
+        input[type="file"]::-webkit-file-upload-button {
+            background-color: var(--soft-purple);
+            color: var(--dark-purple);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 10px;
+            transition: background-color 0.2s;
+        }
+
+        input[type="file"]::-webkit-file-upload-button:hover {
+            background-color: var(--lavender-purple);
+            color: var(--white);
         }
 
         button {
             width: 100%;
-            background-color: var(--primary-pink);
+            background-color: var(--primary-purple);
             color: white;
-            padding: 12px;
+            padding: 14px;
             border: none;
             border-radius: 10px;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
             margin-top: 1rem;
+            box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
         }
 
         button:hover {
-            background-color: var(--dark-pink);
+            background-color: var(--dark-purple);
             transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(74, 20, 140, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
         }
 
         .footer {
-            margin-top: 1.5rem;
+            margin-top: 1.8rem;
             font-size: 0.8rem;
-            color: #aaa;
+            color: #9c27b0; /* Warna footer senada murni lavender */
+            opacity: 0.7;
+            font-weight: 500;
         }
     </style>
 </head>
