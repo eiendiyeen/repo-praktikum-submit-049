@@ -22,7 +22,7 @@ const blobServiceClient = BlobServiceClient.fromConnectionString(process.env.AZU
 
 // Endpoint untuk submit tugas
 app.post('/submit-task', upload.single('file_tugas'), async (req, res) => {
-    const { nim, name, class_name, course } = req.body;
+    const { nim, name, class, course } = req.body;
     const blobName = `${nim}_${req.file.originalname}`;
 
     // 1. Upload ke Azure Blob Storage
@@ -32,7 +32,7 @@ app.post('/submit-task', upload.single('file_tugas'), async (req, res) => {
     const fileUrl = blockBlobClient.url;
 
     // 2. Simpan Metadata ke MySQL
-    const sql = "INSERT INTO submissions (nim, name, class_name, course, file_url) VALUES (?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO submissions (nim, name, class, course, file_url) VALUES (?, ?, ?, ?, ?)";
     db.query(sql, [nim, name, class_name, course, fileUrl], (err) => {
         if (err) return res.status(500).send(err);
         res.send("<h1>Tugas Berhasil Dikirim!</h1><a href='/'>Kembali</a>");
